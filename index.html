@@ -6,48 +6,108 @@
 <title>Pure Thread</title>
 
 <style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
 body{
-    font-family: "Times New Roman", serif;
-    margin:0;
-    background:#f4f4f4;
+    font-family: Arial, sans-serif;
+    background:#f5f5f5;
+    color:#333;
 }
 
 header{
-    background:black;
-    color:white;
-    text-align:center;
-    padding:20px;
+    background:#111;
+    color:white;
+    text-align:center;
+    padding:30px 20px;
+}
+
+header h1{
+    font-size:2.5rem;
+}
+
+header p{
+    margin-top:10px;
+    color:#ccc;
 }
 
 .produtos{
-    display:flex;
-    justify-content:center;
-    gap:20px;
-    flex-wrap:wrap;
-    padding:20px;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:30px;
+    padding:40px 20px;
 }
 
 .produto{
-    background:white;
-    width:250px;
-    border-radius:10px;
-    padding:15px;
-    text-align:center;
-    box-shadow:0 0 10px rgba(0,0,0,0.1);
+    background:white;
+    width:280px;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    transition:transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.produto:hover{
+    transform:translateY(-8px);
+    box-shadow:0 10px 25px rgba(0,0,0,0.15);
 }
 
 .produto img{
-    width:100%;
-    border-radius:10px;
+    width:100%;
+    display:block;
+}
+
+.produto-info{
+    padding:20px;
+    text-align:center;
+}
+
+.produto h3{
+    margin-bottom:10px;
+}
+
+.preco{
+    font-size:1.3rem;
+    font-weight:bold;
+    color:#111;
+    margin-bottom:15px;
 }
 
 button{
-    background:black;
+    background:#111;
     color:white;
     border:none;
-    padding:10px 20px;
+    padding:12px 25px;
+    border-radius:8px;
     cursor:pointer;
-    border-radius:5px;
+    transition:background 0.3s;
+}
+
+button:hover{
+    background:#444;
+}
+
+footer{
+    text-align:center;
+    padding:20px;
+    background:#111;
+    color:white;
+    margin-top:30px;
+}
+
+@media(max-width:600px){
+    header h1{
+        font-size:2rem;
+    }
+
+    .produto{
+        width:100%;
+        max-width:320px;
+    }
 }
 </style>
 
@@ -55,26 +115,44 @@ button{
 <body>
 
 <header>
-    <h1>Pure Thread</h1>
+    <h1>Pure Thread</h1>
+    <p>Moda minimalista e moderna</p>
 </header>
 
-<div class="produtos">
+<section class="produtos">
 
-    <div class="produto">
-        <img src="https://via.placeholder.com/250x300" alt="Camiseta">
-        <h3>Camiseta 1</h3>
-        <p>R$ 49,90</p>
-        <button>Comprar</button>
-    </div>
+    <div class="produto">
+        <img src="https://via.placeholder.com/280x350" alt="Camiseta">
+        <div class="produto-info">
+            <h3>Camiseta Essential</h3>
+            <p class="preco">R$ 49,90</p>
+            <button>Comprar</button>
+        </div>
+    </div>
 
-    <div class="produto">
-        <img src="https://via.placeholder.com/250x300" alt="Calça">
-        <h3>Calça 1</h3>
-        <p>R$ 89,90</p>
-        <button>Comprar</button>
-    </div>
+    <div class="produto">
+        <img src="https://via.placeholder.com/280x350" alt="Calça">
+        <div class="produto-info">
+            <h3>Calça Casual</h3>
+            <p class="preco">R$ 89,90</p>
+            <button>Comprar</button>
+        </div>
+    </div>
 
-</div>
+    <div class="produto">
+        <img src="https://via.placeholder.com/280x350" alt="Moletom">
+        <div class="produto-info">
+            <h3>Moletom Premium</h3>
+            <p class="preco">R$ 129,90</p>
+            <button>Comprar</button>
+        </div>
+    </div>
+
+</section>
+
+<footer>
+    © 2026 Pure Thread - Todos os direitos reservados.
+</footer>
 
 </body>
 </html>
